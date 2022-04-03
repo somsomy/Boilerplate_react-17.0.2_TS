@@ -1,0 +1,27 @@
+.idea
+
+### react ###
+.DS_*
+*.log
+logs
+**/*.backup.*
+**/*.back.*
+
+# dependencies
+/node_modules
+bower_components
+
+*.sublime*
+
+psd
+thumb
+sketch
+
+# production
+/dist
+
+#yarn
+yarn.lock
+
+#node package lock json
+package-lock.json
