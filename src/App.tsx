@@ -1,9 +1,5 @@
 function App() {
-  return (
-    <div>
-      Hello, react bolier plate
-    </div>
-  )
+  return <div>Hello, react bolier plate</div>
 }
 
-export default App;
+export default App
