@@ -1,0 +1,47 @@
+{
+  "plugins": [
+    "@typescript-eslint"
+  ],
+  "extends": [
+    "plugin:react/recommended",
+    "plugin:prettier/recommended"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+    "parserOptions": {
+      "project": [
+        "**/tsconfig.json"
+      ]
+    }
+  },
+  "settings": {
+    "import/resolver": {
+      "typescript": {
+        "alwaysTryTypes": true
+      }
+    }
+  },
+  "rules": {
+    "no-var": 2,
+    "no-unused-vars": 0,
+    "no-multiple-empty-lines": 2,
+    "react/jsx-pascal-case": 2,
+    "react/no-direct-mutation-state": 2,
+    "react/no-unused-state": 1,
+    "react/jsx-key": 2,
+    "react/react-in-jsx-scope": 0,
+    "prettier/prettier": [
+      2,
+      {
+        "semi": false,
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 2,
+        "bracketSpacing": false,
+        "arrowParens": "always",
+        "endOfLine": "auto"
+      }
+    ]
+  }
+}

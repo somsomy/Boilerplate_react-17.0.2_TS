@@ -1,5 +1,5 @@
 function App() {
-  return <div>Hello, react bolier plate</div>
+  return <div>Hello, react boiler plate</div>
 }
 
 export default App
