@@ -1,15 +1,16 @@
-const path = require("path");
-const webpack = require("webpack")
-const HtmlWebpackPlugin = require('html-webpack-plugin');
-const {CleanWebpackPlugin} = require('clean-webpack-plugin');
+const path = require('path')
+const webpack = require('webpack')
+const HtmlWebpackPlugin = require('html-webpack-plugin')
+const {CleanWebpackPlugin} = require('clean-webpack-plugin')
+const Dotenv = require('dotenv')
 
 module.exports = (env, argv) => {
-  const isEnvDev = argv.mode === 'development'
-  const isEnvProd = argv.mode === 'production'
+  const dotenv = Dotenv.config({path: path.resolve(__dirname, `.env.${env.goal}`)})
+  const isDev = process.env.NODE_ENV !== 'production'
 
   return {
-    entry: "./src/index.tsx",
-    mode: isEnvDev ? 'development' : 'production',
+    entry: './src/index.tsx',
+    mode: argv.mode,
     module: {
       rules: [
         {
@@ -19,19 +20,19 @@ module.exports = (env, argv) => {
         },
         {
           test: /\.css$/,
-          use: ["style-loader", "css-loader"]
-        }
-      ]
+          use: ['style-loader', 'css-loader'],
+        },
+      ],
     },
     resolve: {
       alias: {
-        "@booksbridge": path.resolve(__dirname, 'src')
+        '@booksbridge': path.resolve(__dirname, 'src'),
       },
-      extensions: [".ts", ".tsx", ".js", ".jsx", ".json"]
+      extensions: ['.ts', '.tsx', '.js', '.jsx', '.json'],
     },
     output: {
-      path: path.resolve(__dirname, "dist/"),
-      filename: "bolier.js"
+      path: path.resolve(__dirname, 'dist/'),
+      filename: 'bundle.js',
     },
     devServer: {
       historyApiFallback: true,
@@ -40,13 +41,17 @@ module.exports = (env, argv) => {
     },
     plugins: [
       new webpack.ProvidePlugin({
-        React: "react",
+        React: 'react',
+      }),
+      new webpack.DefinePlugin({
+        'process.env': JSON.stringify(dotenv.parsed),
+        'process.env.NODE_ENV': JSON.stringify(isDev ? 'development' : 'production'),
       }),
       new webpack.HotModuleReplacementPlugin(),
       new HtmlWebpackPlugin({
         template: './public/index.html',
       }),
       new CleanWebpackPlugin(),
-    ]
-  };
+    ],
+  }
 }

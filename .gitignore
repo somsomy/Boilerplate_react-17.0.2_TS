@@ -1,7 +1,14 @@
+# IDE / Editor
 .idea
+
+/.eslintcache
 
 ### react ###
 .DS_*
+launch.json
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
 *.log
 logs
 **/*.backup.*
@@ -10,6 +17,8 @@ logs
 # dependencies
 /node_modules
 bower_components
+/.pnp
+.pnp.js
 
 *.sublime*
 
@@ -25,3 +34,16 @@ yarn.lock
 
 #node package lock json
 package-lock.json
+
+# Runtime data
+pids
+*.pid
+*.seed
+*.pid.lock
+
+
+# Yarn Integrity file
+.yarn-integrity
+
+# parcel-bundler cache (https://parceljs.org/)
+.cache
