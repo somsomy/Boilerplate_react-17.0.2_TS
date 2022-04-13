@@ -1,6 +1,6 @@
-import { Box, Button } from "@mui/material";
-import { useContext } from "react";
-import { ThemeSettingContext } from "./common/contexts/ThemeSettingContext";
+import { Box, Button } from '@mui/material';
+import { useContext } from 'react';
+import { ThemeSettingContext } from './common/contexts/ThemeSettingContext';
 
 function App() {
   const { onChangeThemeMode } = useContext(ThemeSettingContext);
