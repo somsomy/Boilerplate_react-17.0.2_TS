@@ -33,12 +33,12 @@
     "prettier/prettier": [
       2,
       {
-        "semi": false,
-        "trailingComma": "es5",
+        "semi": true,
+        "trailingComma": "none",
         "singleQuote": true,
         "printWidth": 100,
         "tabWidth": 2,
-        "bracketSpacing": false,
+        "bracketSpacing": true,
         "arrowParens": "always",
         "endOfLine": "auto"
       }
