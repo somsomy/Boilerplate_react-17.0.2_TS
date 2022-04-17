@@ -1,6 +1,6 @@
-import App from './App'
-import ThemeProvider from './theme'
-import {ThemeSettingProvider} from './common/contexts/ThemeSettingContext'
+import App from './App';
+import ThemeProvider from './theme';
+import { ThemeSettingProvider } from './common/contexts/ThemeSettingContext';
 
 export default function AppContainer() {
   return (
@@ -9,5 +9,5 @@ export default function AppContainer() {
         <App />
       </ThemeProvider>
     </ThemeSettingProvider>
-  )
+  );
 }

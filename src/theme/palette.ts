@@ -5,6 +5,6 @@ const palette = {
   dark: {
     mode: 'dark'
   }
-} as const
+} as const;
 
-export default palette
+export default palette;
